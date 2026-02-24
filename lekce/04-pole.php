@@ -77,3 +77,9 @@ echo 'Sudá: ' . implode(', ', $suda) . "\n";
 echo "\n--- Tvůj úkol ---\n";
 // TODO: Vytvoř pole svých 5 oblíbených filmů a vypiš je s pořadím
 // TODO: Použij array_filter k vyfiltrování filmů začínajících na určité písmeno
+
+$filmy = ['Matrix', 'Pulp Fiction', 'Mr Robot', 'Interstellar', 'Bohemian Rhapsody'];
+foreach ($filmy as $index => $film) {
+    $poradi = $index + 1;
+    echo "{$poradi}. {$film}\n";
+}

@@ -122,3 +122,11 @@ echo "Cena s DPH: {$cenaSdph} Kč\n";
 echo "\n--- Tvůj úkol ---\n";
 // TODO: Napiš funkci obdelnik(float $a, float $b): array
 //       která vrátí pole s klíči 'obvod' a 'obsah'
+
+function obdelnik(float $a=2, float $b=5):array
+{
+    $obvod = 2 * ($a + $b);
+    $obsah = $a * $b;
+    return ['obvod' => $obvod, 'obsah' => $obsah];
+}
+echo "Obdélník: " . print_r(obdelnik(2, 5), true) . "\n";

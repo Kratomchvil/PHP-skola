@@ -57,5 +57,85 @@
         <h2><?= $pozdrav ?></h2>
         <p>Tento text je generovaný PHP.</p>
     </div>
-</body>
+
+    <div class="card" style="color: #4F5B93; font-weight: bold;">
+    <?php 
+    $hrdinaJmeno = 'Batman';
+    $hrdinaSila = 85;
+    $hrdinaZdravi = 900;
+
+    echo "Oblíbeny hrdina ukol v lekci 1: <br>";
+
+    echo "Jmeno hrdiny: {$hrdinaJmeno} <br>";
+    echo "Síla: {$hrdinaSila}<br>";
+    echo "Zdraví: {$hrdinaZdravi}<br>";
+    
+    ?>
+    </div>
+
+    <div class="card"
+        style="color: #4F5B93; font-weight: bold;">
+        <h3>Výpočet známky podle skóre z ukolu 2.</h3>
+    <?php
+        $skore = 92;
+    $znamka = match (true) {
+    $skore >= 90 => 1,
+    $skore >= 75 => 2,
+    $skore >= 50 => 3,
+    $skore >= 25 => 4,
+    default => 5,
+    };
+
+    echo "Skóre: {$skore}, Známka: {$znamka}<br>";
+    ?>
+    </div>
+
+
+    <div class="card" style="color: #4F5B93; font-weight: bold;">
+        <h3>Obrácený počítadlo (10 až 1) ukol z 3 lekce:</h3>
+        <h4>a.</h4>
+        <?php
+        for($i=10; $i>=1; $i--){
+        echo "{$i} ";
+}
+    ?>
+    <h4>b.</h4>
+    <?php
+    $nasobek = 7;
+    for($i=1; $i<=10; $i++){
+    echo "{$nasobek}x{$i}=".($nasobek*$i)."\n";
+}   
+    ?>
+    </div>
+
+    <div class="card" style="color: #4F5B93; font-weight: bold;">
+        <h3>Seznam filmů ukol z 4 lekce:</h3>
+        <?php
+        $filmy = ['Matrix', 'Pulp Fiction', 'Mr Robot', 'Interstellar', 'Bohemian Rhapsody'];
+        foreach ($filmy as $index => $film) {
+        $poradi = $index + 1;
+        echo "{$poradi}. {$film}\n";
+}
+    ?>
+    </div>
+
+
+
+    <div class="card" style="color: #4F5B93; font-weight: bold;">
+        <h3>Výpočet obdélníku (ukol z 5 lekce):</h3>
+        <?php
+        function obdelnik(float $a=2, float $b=5):array
+{
+    $obvod = 2 * ($a + $b);
+    $obsah = $a * $b;
+    return ['obvod' => $obvod, 'obsah' => $obsah];
+}
+    $vysledky = obdelnik(2, 5);
+    echo "Obdélník: obvod = {$vysledky['obvod']}, obsah = {$vysledky['obsah']}\n";
+    ?>  
+    </div>
+    </body>
+    
 </html>
+
+
